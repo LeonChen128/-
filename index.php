@@ -7,8 +7,10 @@
             <p>選擇您要的數量</p>
             <select name = 'count'>
                 <?php
-                    for($i=0 ; $i<10 ; $i++){
-                        echo '<option value ="'. $i . '">' . $i .'</option>';
+                    $i=0;
+                    while($i<10){
+                        echo '<option value = "' . $i . '">' . $i . '</option>';
+                        $i++;
                 }
                 ?>
             </select>
