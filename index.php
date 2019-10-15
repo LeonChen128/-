@@ -4,10 +4,13 @@
     </head>
     <body>
         <form action = 'index2.php' method = 'post'>
-            <p><input type = 'radio' name = 'meal' value = '中式套餐' checked>中式套餐<img src = '/img/中式套餐.jpg' width = '200px' height = '150px'></p>
-            <p><input type = 'radio' name = 'meal' value = '日式套餐'>日式套餐<img src = '/img/日式套餐.jpg' width = '200px' height = '150px'></p>
-            <p><input type = 'radio' name = 'meal' value = '西式套餐'>西式套餐<img src = '/img/西式套餐.jpeg' width = '200px' height = '150px' ></p>
-            <p><input type = 'submit' value = '送出'></p> 
+            <p>選擇您要的座位類型</p>
+            <select name = 'seat'>
+                <option value = '自由座'>自由座</option>
+                <option value = '對號座'>對號座</option>
+                <option value = '商務艙'>商務艙</option>
+            </select>
+            <input type = 'submit' value = '送出'> 
         </form>
     </body>  
 </html>

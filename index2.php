@@ -1,13 +1,12 @@
 <?php
-switch($_POST['meal']){
-case '中式套餐':
-    echo '春捲、煎餃、蛋花湯、炒飯、杏仁豆腐';
+switch($_POST['seat']){
+case '自由座':
+    echo $_POST['seat'] .'價格為500元。';
     break;
-case '日式套餐':
-    echo '烤魚、燉菜、味噌湯、白飯、水果';
+case '對號座':
+    echo $_POST['seat'] . '價格為900元。';
     break;
-case '西式套餐':
-    echo '牛排、薯餅、密米濃湯、麵包、花椰菜';
+case '商務艙':
+    echo $_POST['seat'] . '價格為1300元。';
     break;        
 }
-echo '將稍後送達。';
