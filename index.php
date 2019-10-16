@@ -4,17 +4,23 @@
     </head>
     <body>
         <form action = 'index2.php' method = 'post'>
-            <p>選擇您要的數量</p>
-            <select name = 'count'>
+            <p>選擇密碼提示問題</p>
+            <select name = 'question'>
                 <?php
-                    $i=0;
-                    while($i<10){
-                        echo '<option value = "' . $i . '">' . $i . '</option>';
-                        $i++;
-                }
-                ?>
+                    $question = ['家裡電話',
+                                 '小學名稱',
+                                 '第一輛買的車的品牌',
+                                 '第一隻寵物名字',
+                                 '最喜歡的電影',
+                                 '最喜歡的歌手'];
+                    foreach($question as $item){
+                        echo '<option value = "' . $item . '">' .$item.'</option>';
+                    }
+                ?>                 
             </select>
-            <input type = 'submit' value = '送出'> 
+            <p>輸入問題答案</p>
+            <p><input type="text" name="answer"></p>
+            <p><input type = 'submit' value = '送出'></p> 
         </form>
     </body>  
 </html>
