@@ -8,5 +8,6 @@
             <input type = 'text' name = 'postcode'>
             <p><input type = 'submit' value = '確認'></p>
         </form>
+        
     </body>  
 </html>
