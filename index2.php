@@ -1,12 +1,26 @@
 <?php
 
-if (isset ($_POST['password'])) {
-  $password = $_POST['password'];
-  if (preg_match ('/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}/', $password)) {
-    echo $password . '符合密碼格式。';
+$thisPhpPath = __File__;
+
+$paths = explode('/', $thisPhpPath);
+array_pop ($paths);
+$thisProjectPath = implode('/', $paths);
+$uploadPath = $thisProjectPath . '/upload';
+
+
+if (is_uploaded_file ($_FILES['file']['tmp_name'])) {
+  if (!file_exists ($uploadPath)) {
+    mkdir ($uploadPath);
+  }
+  $file = $uploadPath .'/' .  basename ($_FILES['file']['name']);
+  if (move_uploaded_file ($_FILES['file']['tmp_name'], $file)){
+    echo $file . '上傳成功';
+    echo '<p><img src="/購物網站/upload/中式套餐.jpg"></p>';
   }else {
-    echo $password . '不符合密碼格式，請重新輸入。';
+    echo '上傳失敗';
   }
 }else {
-  echo '尚未輸入任何密碼';
+  echo '請選擇檔案';
 }
+
+
