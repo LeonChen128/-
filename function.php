@@ -1,18 +1,26 @@
 <?php
 
-function checkbox($i, $j) {
-  return '<p><input type="checkbox" name="' . $i . '">' . $j . '</p>';
+class radio {
+  public $name;
+  public $text;
 }
 
-$aaa = [checkbox('meal[]', '紅茶'),
-        checkbox('meal[]', '綠茶'),
-        checkbox('meal[]', '咖啡')
-];
+$a = new radio();
+$a->name = 'meal';
+$a->text = '紅茶';
 
-foreach($aaa as $key => $value) {
-  echo $value;
+$b = new radio();
+$b->name = 'meal';
+$b->text = '綠茶';
+
+$c = new radio();
+$c->name = 'meal';
+$c->text = '咖啡';
+
+$abc = [$a, $b, $c];
+
+foreach($abc as $key => $value) {
+  echo '<p><input type="radio" name="' . $value->name . '">' . $value->text . '</p>';
 }
 
 echo '<input type="submit" value="送出">';
-
-
