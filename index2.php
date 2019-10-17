@@ -1,10 +1,12 @@
 <?php
 
-
-$postcode = $_POST['postcode'];
-
-if(preg_match('/^[0-9]{7}$/',$postcode)){
-    echo '您輸入之'.$postcode.'符合郵遞區號格式';
-}else{
-    echo '您輸入之'.$postcode.'不符合郵遞區號格式，請重新確認。';
+if (isset ($_POST['password'])) {
+  $password = $_POST['password'];
+  if (preg_match ('/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}/', $password)) {
+    echo $password . '符合密碼格式。';
+  }else {
+    echo $password . '不符合密碼格式，請重新輸入。';
+  }
+}else {
+  echo '尚未輸入任何密碼';
 }
