@@ -1,14 +1,14 @@
-<html>
-    <head>
-        <title>購物網站</title>
-    </head>
-    <body>
-        <form action='index2.php' method='post' enctype='multipart/form-data'>
-            <p>請選擇要上傳之檔案：</p>
-            <input type='file' name='file'>
-            <p><input type='submit' value='上傳'></p>
-        </form>      
-    </body>  
-</html>
+<?php
+
+function linkMysql($i, $j, $k) {
+  $a = 'mysql:host=localhost;dbname=' . $i . ';charset=utf8';
+  return new PDO($a,$j,$k);
+}
+
+$pdo = linkMysql('SHOP', 'root', '1234');
+
+foreach ($pdo->query('select * from Product') as $row) {
+  echo '<p>' . $row['id'] . '.' .  $row['name'] . ':' .  $row['price'] . '</p>';
+}  
 
 
