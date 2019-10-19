@@ -28,5 +28,10 @@ function upload($i, $j, $k) {
     return '檔案上傳失敗';
   }
 }
+//連結資料庫 server, database, user, password
+function linkMysql($i, $j, $k, $l) {
+  $a = 'mysql:host=' . $i . ';dbname=' . $j . ';charset=utf8';
+  return new PDO($a, $k, $l);
+}
 
 
