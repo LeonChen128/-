@@ -1,32 +1,29 @@
+
+<table>
+  <tr>
+  <th>商品編號</th>
+  <th>商品名稱</th>
+  <th>商品價格</th>
+  </tr>
+
 <?php
 
-function thisProjectPath($i) {
-  $thisPhpPath = __File__;
-  $paths = explode('/', $thisPhpPath);
-  array_pop($paths);
-  $thisProjectPath = implode('/', $paths);
-  return $thisProjectPath . '/' .  $i;
+include ('lib.php');
+
+$pdo = linkMysql('localhost', 'SHOP', 'root', '1234');
+
+$keyword = trim($_POST['keyword']);
+
+$sql = 'select * from Product where name like "%' . $keyword . '%"';
+
+foreach ($pdo->query($sql) as $row) {
+  echo '<tr>';
+  echo '<td>' . $row['id'] . '</td>';
+  echo '<td>' . $row['name'] . '</td>';
+  echo '<td>' . $row['price'] . '</td>';
+  echo '</tr>';
 }
 
-function extGet($i) {
-  $name = explode('.', $i);
-  return end($name);
-}
+?>
 
-function upload($i, $j, $k) {
-  if (is_uploaded_file($_FILES[$i]['tmp_name'])) {
-    if (!file_exists(thisProjectPath($j))) {
-      mkdir (thisProjectPath($j));
-    }
-  }
-  $originalName = basename($_FILES[$i]['name']);
-  $newName = thisProjectPath($j) . '/' . $k . '.' . extGet($originalName);
-  if (move_uploaded_file($_FILES[$i]['tmp_name'], $newName)) {
-    return '檔案上傳成功';
-  }else {
-    return '檔案上傳失敗';
-  }
-}
-
-echo upload('file', 'upload', '新檔名');
-
+</table>
