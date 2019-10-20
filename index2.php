@@ -1,29 +1,25 @@
-
-<table>
-  <tr>
-  <th>商品編號</th>
-  <th>商品名稱</th>
-  <th>商品價格</th>
-  </tr>
-
 <?php
 
-include ('lib.php');
+include('lib.php');
 
 $pdo = linkMysql('localhost', 'SHOP', 'root', '1234');
 
-$keyword = trim($_POST['keyword']);
+$name  = htmlspecialchars(trim($_POST['name']));
+$price = htmlspecialchars(trim($_POST['price']));
 
-$sql = 'select * from Product where name like "%' . $keyword . '%"';
-
-foreach ($pdo->query($sql) as $row) {
-  echo '<tr>';
-  echo '<td>' . $row['id'] . '</td>';
-  echo '<td>' . $row['name'] . '</td>';
-  echo '<td>' . $row['price'] . '</td>';
-  echo '</tr>';
+if ($name =='' or $price =='') {
+  echo '商品名稱及價格輸入處不得空白，請重新輸入';
+  exit;
 }
 
-?>
+if (!preg_match('/[0-9]/', $price)) {
+  echo '價格欄位請輸入0-9之數字，請重新輸入';
+  exit;
+}
 
-</table>
+$sql = 'insert into Product values(null,"' . $name . '", ' . $price . ')';
+
+if ($pdo->query($sql)) {
+  echo '商品新建成功';
+}
+
