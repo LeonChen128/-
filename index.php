@@ -8,19 +8,15 @@
       <?php
       include('lib.php');
       include('define.php');
-      
       $pdo = linkMysql();
       $sql = $pdo->prepare('SELECT * FROM Product');
       $sql->execute();
       foreach ($sql->fetchAll() as $row) {
-        echo '<tr>';
-        echo '<form action="index2.php" method="post">';
-        echo '<input type="hidden" name = "id" value="' . $row['id'] . '">';
-        echo '<td>' . $row['id'] . '</td>';
-        echo '<td><input type="text" name="name" value="' . $row['name'] . '"></td>';
-        echo '<td><input type="text" name="price" value="' . $row['price'] . '"></td>';
-        echo '<td><input type="submit" value="修改"></td>';
-        echo '</form></tr>';
+        echo '<tr><td>' . $row['id'] . '</td>';
+        echo '<td>' . $row['name'] . '</td>';
+        echo '<td>' . $row['price'] . '</td>';
+        echo '<td><a href="index2.php?id=' . $row['id'] . '">確定刪除</a></td>';
+        echo '</tr>';
       }
       ?>
     </table>
