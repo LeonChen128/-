@@ -3,25 +3,23 @@
 include('lib.php');
 include('define.php');
 
-session_start();
-unset($_SESSION['customer']);
+$name       = htmlspecialchars(trim($_POST['name']));
+$address    = htmlspecialchars(trim($_POST['address']));
+$login      = htmlspecialchars(trim($_POST['login']));
+$password   = htmlspecialchars(trim($_POST['password']));
+$repassword = htmlspecialchars(trim($_POST['repassword']));
 
 $pdo = linkMysql();
-$sql = $pdo->prepare('SELECT * FROM Customer WHERE login=? AND password=?');
-$sql->execute([$_POST['login'], $_POST['password']]);
-foreach ($sql->fetchAll() as $row) {
-  $_SESSION['customer'] = [
-    'id' => $row['id'],
-    'name' => $row['name'],
-    'address' => $row['address'],
-    'login' => $row['login'],
-    'password' => $row['password']
-  ];
+$sql = $pdo->prepare('INSERT INTO Customer VALUES(null, ?, ?, ?, ?)');
+if (isset($name, $address, $login, $password) && $name != '' && $address != '' && $login != '' && $password != '') {
+  if ($password == $repassword) {
+    $sql->execute([$name, $address, $login, $password]);
+    echo '註冊成功';
+  }else {
+    echo '密碼確認錯誤';
+  }
+}else {
+  echo '欄位不可空白';
 }
 
-if (isset($_SESSION['customer'])) {
-  echo '歡迎回來，' . $_SESSION['customer']['name'] . '。';
-}else {
-  echo '輸入有錯';
-}
 

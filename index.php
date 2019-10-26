@@ -3,11 +3,16 @@
     <title>練習一下</title>
   </head>
   <body>
-    <form action="index2.php" method="post">
-      <h1>登入帳號</h1>  
-      <p>請輸入帳號：<input type="text" name="login"></p>
-      <p>請輸入密碼：<input type="password" name="password"></p>
-      <p><input type="submit" value="登入"></p>
-    </form>  
+    <h1>會員註冊</h1>
+    <table>
+      <form action="index2.php" method="post">
+        <tr><td>會員名字：</td><td><input type="text" name="name"></td></tr>
+        <tr><td>會員地址：</td><td><input type="text" name="address"></td></tr>
+        <tr><td>會員帳號：</td><td><input type="text" name="login"></td></tr>  
+        <tr><td>會員密碼：</td><td><input type="password" name="password"></td></tr>
+        <tr><td>再次輸入密碼：</td><td><input type="password" name="repassword"></td></tr>
+        <tr><td><input type="submit" value="送出"></td></tr>
+      </form>
+    </table>    
   </body>
 </html>
