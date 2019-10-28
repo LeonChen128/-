@@ -2,12 +2,16 @@
 
 include('lib.php');
 include('define.php');
-include('menu.php');
+include('menu1.php');
 
 session_start();
 if (isset($_SESSION['customer'])) {
   unset($_SESSION['customer']);
-  echo '您已成功登出';
+  echo '<p class="notice">您已成功登出</p>';
 }else {
-  echo '您原本就尚未登入';
+  echo '<p class="notice">您尚未登入</p>';
 }
+?>
+
+<link rel="stylesheet" type="text/css" href="lib.css">
+<body class="background"></body>

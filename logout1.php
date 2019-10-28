@@ -1,12 +1,14 @@
 <html>
   <head>
-    <title>登出頁面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>帳號登出-購物網站</title>
+    <link rel="stylesheet" type="text/css" href="lib.css">
   </head>
-  <body>
+  <body class="background">
     <?php
-    include('menu.php');
+    include('menu2.php');
     ?>
-    <p>確定會員登出？</p>
-    <a href="logout2.php">登出</a>
+    <p style="margin-left:10px;font-size:18px;">確定會員登出？</p>
+    <a href="logout2.php" style="margin-left:10px;text-decoration: none;">登出</a>
   </body> 
 </html>

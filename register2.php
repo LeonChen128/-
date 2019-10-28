@@ -2,7 +2,7 @@
 
 include('lib.php');
 include('define.php');
-include('menu.php');
+include('menu1.php');
 
 $name       = htmlspecialchars(trim($_POST['name']));
 $address    = htmlspecialchars(trim($_POST['address']));
@@ -15,12 +15,16 @@ $sql = $pdo->prepare('INSERT INTO Customer VALUES(null, ?, ?, ?, ?)');
 if ($name != '' && $address != '' && $login != '' && $password != '') {
   if ($password == $repassword) {
     $sql->execute([$name, $address, $login, $password]);
-    echo '註冊成功';
+    echo '<p class="notice">註冊成功</p>';
   }else {
-    echo '密碼確認錯誤';
+    echo '<p class="notice">密碼確認錯誤</p>';
   }
 }else {
-  echo '欄位不可空白';
+  echo '<p class="notice">欄位不可空白</p>';
 }
 
+?>
 
+<link rel="stylesheet" type="text/css" href="lib.css">
+<body class="background">
+</body>

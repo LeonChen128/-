@@ -2,7 +2,6 @@
 
 include('lib.php');
 include('define.php');
-include('menu.php');
 
 session_start();
 unset($_SESSION['customer']);
@@ -24,7 +23,15 @@ foreach ($sql->fetchAll() as $row) {
   ];
 }
 if (isset($_SESSION['customer'])) {
-  echo '歡迎回來，' . $_SESSION['customer']['name'] . '。';
+  include('menu2.php');
+  echo '<p class="notice">歡迎回來，' . $_SESSION['customer']['name'] . '。</p>';
 }else {
-  echo '帳號密碼輸入錯誤，請重新確認';
+  include('menu1.php');
+  echo '<p class="notice">帳號密碼輸入錯誤，請重新確認</p>';
 }
+?>
+
+
+<link rel="stylesheet" type="text/css" href="lib.css">
+<body class="background">
+</body>
