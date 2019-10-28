@@ -64,3 +64,29 @@
 .word18px {
   font-size:18px;
 }
+.picture {
+  margin:25px 0px 0px 25px;
+}
+.product-detail {
+  margin:25px 0px 0px 25px;
+  font-size:18px;
+}
+.car {
+  height:40px;
+  width:160px;
+  font-size:18px;
+  border-radius:3px;
+  background-color:rgb(51,122,183);
+  color:rgb(255,255,255);
+}
+.detail-card {
+  width:380px;
+  padding:25px;
+  margin:25px;
+  background:rgb(255,255,255);
+  border-radius:3px;
+}
+.picture-size {
+  height:240px;
+  width:320px;
+}
