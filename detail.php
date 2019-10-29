@@ -18,7 +18,7 @@ foreach ($sql->fetchAll() as $row) {
   echo '<p class="product-detail">商品編號：' . $row['id'] . '</p>';
   echo '<p class="product-detail">商品名稱：' . $row['name'] . '</p>';
   echo '<p class="product-detail">商品價格：' . $row['price'] . '</p>';
-  echo '<form action="car.php" method="post">';
+  echo '<form action="car-insert.php" method="post">';
   echo '<p class="product-detail">數量：';
   echo '<select name="count">';
   for ($i=1; $i<=14; $i++) {

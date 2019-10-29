@@ -1,11 +1,12 @@
 <?php
 
+
 //取得../$i資料夾
 function thisProjectPath($i) {
   $thisPhpPath = __File__;
   $paths = explode('/', $thisPhpPath);
-  array_pop($paths);
-  $thisProjectPath = implode('/', $paths);
+  array_pop($paths);                         
+  $thisProjectPath = implode('/', $paths);   
   return $thisProjectPath . '/' .  $i;
 }
 //取得$i副檔名
@@ -29,9 +30,17 @@ function upload($i, $j, $k) {
   }
 }
 //連結資料庫 server, database, user, password
-function linkMysql($i, $j, $k, $l) {
-  $a = 'mysql:host=' . $i . ';dbname=' . $j . ';charset=utf8';
-  return new PDO($a, $k, $l);
+function linkMysql() {
+  $a = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8';
+  return new PDO($a, DB_USER, DB_PSWD);
 }
+
+
+
+
+
+
+
+
 
 
