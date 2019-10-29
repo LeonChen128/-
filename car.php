@@ -1,7 +1,7 @@
 <?php
 
 if (!empty($_SESSION['product'])) {
-  echo '<table class="table-car"><tr style="background-color:rgb(81,161,180);"><th>商品編號</th><th>圖片</th><th>名稱</th><th>價格</th><th>數量</th><th>小計</th><th>動作</th></tr>';
+  echo '<table class="table-car"><p style="margin-left:10px;font-size:20px;margin-bottom:0px;">購物車：</p><tr style="background-color:rgb(81,161,180);"><th>商品編號</th><th>圖片</th><th>名稱</th><th>價格</th><th>數量</th><th>小計</th><th>動作</th></tr>';
   $total = 0;
   foreach ($_SESSION['product'] as $id => $product) {
     echo '<tr style="background:rgb(226,240,243);"><td>' . $id . '</td>';

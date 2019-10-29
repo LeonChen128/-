@@ -30,6 +30,6 @@ foreach ($sql->fetchAll() as $row) {
   echo '<input type="hidden" name="price" value="' . $row['price'] . '">';
   echo '<p class="product-detail"><button class="car">加入購物車</button></p>';
   echo '</form>';
-  echo '<p class="product-detail"><a href="favorite.php?id=' . $row['id'] . '" class="product">加入我的最愛</a></p>';
+  echo '<p class="product-detail"><a href="favorite-insert.php?id=' . $row['id'] . '" class="product">加入我的最愛</a></p>';
 }
 echo '</div>';
