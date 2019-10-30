@@ -16,3 +16,4 @@ foreach ($sql -> fetchAll() as $row) {
   echo '<td><a href="favorite-delete.php?id=' . $row['id'] . '">移除</a></td></tr>';
 }
 echo '</table>';
+
