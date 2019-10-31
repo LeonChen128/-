@@ -22,12 +22,30 @@ foreach ($sql->fetchAll() as $row) {
     'password' => $row['password'],
   ];
 }
+
+
+
 if (isset($_SESSION['customer'])) {
   include('menu2.php');
   echo '<p class="notice">歡迎回來，' . $_SESSION['customer']['name'] . '。</p>';
 }else {
-  include('menu1.php');
-  echo '<p class="notice">帳號密碼輸入錯誤，請重新確認</p>';
+  $sql_master = $pdo->prepare('SELECT * FROM Master WHERE login=? AND password=?');
+  $sql_master->execute([$login, $password]);
+  foreach ($sql_master->fetchAll() as $row_master) {
+    $_SESSION['customer'] = [
+      'id' => $row_master['id'],
+      'name' => $row_master['name'],
+      'login' => $row_master['login'],
+      'password' => $row_master['password'],
+    ];
+  }
+  if (isset($_SESSION['customer'])) {
+    include('menu3.php');
+    echo '<p class="notice">歡迎回來，' . $_SESSION['customer']['name'] . '。</p>';
+  }else {
+    include('menu1.php');
+    echo '<p class="notice">帳號密碼輸入錯誤，請重新確認</p>';
+  }
 }
 ?>
 
