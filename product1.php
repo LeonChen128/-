@@ -2,7 +2,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>商品一欄-購物網站</title>
-    <link rel="stylesheet" type="text/css" href="lib.css">
+    <link rel="stylesheet" type="text/css" href="lib/all.css">
   </head>
   <body class="background">
     <?php
@@ -24,9 +24,9 @@
     <div class="product-card">
       <h1 style="text-align:center;">商品資料</h1>
       <table style="text-align:center;margin-left:50px;">
-        <tr class="word18px"><th>商品編號</th><th>商品名稱</th><th>商品價格</th></tr>
+        <!--<tr class="word18px"><th>商品編號</th><th>商品名稱</th><th>商品價格</th></tr>-->
         <?php
-        include('lib.php');
+        include('lib/funcs.php');
         include('define.php');
   
         $pdo = linkMysql();
@@ -38,11 +38,17 @@
           $sql = $pdo->prepare('SELECT * FROM Product');
           $sql->execute();
         }
-        
-        foreach ($sql->fetchAll() as $row) {
-          echo '<tr class="word18px"><td>' . $row['id'] . '</td>';
-          echo '<td><a href="detail.php?id=' . $row['id'] . '" class="product">' .  $row['name'] . '</a></td>';
-          echo '<td>' . $row['price'] . '</td></tr>';
+
+        foreach ($sql->fetchAll() as $products) {
+          echo '<a href="detail.php?id=' . $products['id'] . '" class="detailFrameLink">';
+          echo '<div class="productFrame">';
+          echo '<img src="' . $products['picture'] . '" class="pictureFrame">';
+          echo '<spanl class="detailFrame">商品編號：';
+          echo $products['id'] . '<br>商品名稱：';
+          echo $products['name'] . '<br>商品價格：';
+          echo $products['price'];
+          echo '</spanl>';
+          echo '</div></a>';
         }
         ?> 
       </table>

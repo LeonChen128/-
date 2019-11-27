@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="lib.css">
+<link rel="stylesheet" type="text/css" href="lib/all.css">
 <body class="background"></body>
 <?php
 

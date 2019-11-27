@@ -2,7 +2,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>商品一欄-購物網站</title>
-    <link rel="stylesheet" type="text/css" href="lib.css">
+    <link rel="stylesheet" type="text/css" href="lib/all.css"> 
   </head>
   <body class="background">
     <?php
@@ -26,7 +26,7 @@
       <table style="text-align:center;margin-left:50px;">
         <tr class="word18px"><th>商品編號</th><th>商品名稱</th><th>商品價格</th></tr>
         <?php
-        include('lib.php');
+        include('lib/funcs.php');
         include('define.php');
   
         $pdo = linkMysql();

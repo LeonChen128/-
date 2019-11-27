@@ -1,11 +1,11 @@
-<link rel="stylesheet" type="text/css" href="lib.css">
+<link rel="stylesheet" type="text/css" href="lib/all.css">
 <body class="background">
 </body>
 
 <?php
 
 include('define.php');
-include('lib.php');
+include('lib/funcs.php');
 include('menu3.php');
 
 $name  = htmlspecialchars(trim($_POST['name']));

@@ -20,10 +20,20 @@
 }
 
 .word {
-  font-size:16px;
+  font-size:14px;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 5px;
+  border-radius: 3px;
   color:rgb(255, 255, 255);
   text-decoration: none;
-  display:inline-block;margin-top: 7px;margin-left:20px
+  display:inline-block;
+  text-align: center;
+  margin: 5px 0 0 10px;
+}
+
+.word:hover {
+  background: rgba(39, 140, 138, 1);
 }
 
 .card {
@@ -34,6 +44,7 @@
   border-radius: 5px;
   padding:50px 40px;
   background:rgb(255,255,255);
+  border: 1px solid rgba(220, 220, 220, 1);
 }
 
 .input-text {
@@ -41,6 +52,7 @@
   width:200px;
   border-radius: 3px;
   font-size:16px;
+  border: 1px solid rgba(200,200,200,1);
 }
 .button {
   height:40px;
@@ -51,20 +63,72 @@
   background-color:rgb(51,122,183);
   color:rgb(255,255,255);
 }
+
+.button:hover {
+  background: rgba(14,74,125,1);
+}
+
+.goRegister {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 10px;
+  color: rgba(19, 150, 210, 1);
+}
+
+.goRegister:hover {
+  color: rgba(37,63,210,1);
+}
+
 .notice {
-  margin-left:10px;
+  width: 400px;
+  height: 30px;
   font-size:18px;
+  margin: 10px auto;
 }
 .product {
   text-decoration:none;
 }
 .product-card {
+  display: inline-block;
   padding:15px;
-  margin-left:50px;
-  width:350px;
+  margin-left: 230px;
+  width:945px;
   background-color:rgb(255,255,255);
   border-radius:3px;
 }
+
+.detailFrameLink {
+  color: black;
+}
+
+.productFrame {
+  display: inline-block;
+  width: 400px;
+  height: 150px;
+  border: 1px solid rgba(220,220,220,1);
+  border-radius: 3px;
+  margin: 5px 0 0 45px;
+}
+
+.productFrame:hover {
+  background: lightblue
+}
+
+.pictureFrame {
+  display: inline-block;
+  width: 160px;
+  height: 120px;
+  margin: 15px 0 0 15px;
+  border-radius: 3px;
+  float: left;
+}
+
+.detailFrame {
+  display: inline-block;
+  margin: 30px 0 0 10px;
+  float: left;
+}
+
 .word18px {
   font-size:18px;
 }

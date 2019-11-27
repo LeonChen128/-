@@ -1,6 +1,6 @@
 <?php
 
-include('lib.php');
+include('lib/funcs.php');
 include('define.php');
 
 session_start();
@@ -50,6 +50,6 @@ if (isset($_SESSION['customer'])) {
 ?>
 
 
-<link rel="stylesheet" type="text/css" href="lib.css">
+<link rel="stylesheet" type="text/css" href="lib/all.css">
 <body class="background">
 </body>

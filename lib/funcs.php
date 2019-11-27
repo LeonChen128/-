@@ -1,7 +1,7 @@
 <?php
 
 
-//取得../$i資料夾
+//取得../$i資料夾路徑
 function thisProjectPath($i) {
   $thisPhpPath = __File__;
   $paths = explode('/', $thisPhpPath);
