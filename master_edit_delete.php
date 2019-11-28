@@ -12,4 +12,4 @@ $pdo = linkMysql();
 $sql = $pdo->prepare('DELETE FROM Product WHERE id = ?');
 $sql->execute([$_POST['id']]);
 
-echo '<p class="notice">刪除成功!</p>';
+echo '<p>刪除成功!</p>';

@@ -15,12 +15,12 @@ $sql = $pdo->prepare('INSERT INTO Customer VALUES(null, ?, ?, ?, ?)');
 if ($name != '' && $address != '' && $login != '' && $password != '') {
   if ($password == $repassword) {
     $sql->execute([$name, $address, $login, $password]);
-    echo '<p class="notice">註冊成功</p>';
+    echo '<p>註冊成功</p>';
   }else {
-    echo '<p class="notice">密碼確認錯誤</p>';
+    echo '<p>密碼確認錯誤</p>';
   }
 }else {
-  echo '<p class="notice">欄位不可空白</p>';
+  echo '<p>欄位不可空白</p>';
 }
 
 ?>

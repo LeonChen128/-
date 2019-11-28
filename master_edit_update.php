@@ -16,5 +16,5 @@ $pdo = linkMysql();
 $sql = $pdo->prepare('UPDATE Product SET name=? , price=? WHERE id=?');
 $sql->execute([$name, $price, $id]);
 
-echo '<p class="notice">修改成功!</p>';
+echo '<p>修改成功!</p>';
 

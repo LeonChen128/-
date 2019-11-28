@@ -8,9 +8,9 @@ session_start();
 if (isset($_SESSION['customer'])) {
   unset($_SESSION['customer']);
   unset($_SESSION['product']);
-  echo '<p class="notice">您已成功登出</p>';
+  echo '<p>您已成功登出</p>';
 }else {
-  echo '<p class="notice">您尚未登入</p>';
+  echo '<p>您尚未登入</p>';
 }
 ?>
 

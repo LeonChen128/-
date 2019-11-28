@@ -27,7 +27,7 @@ foreach ($sql->fetchAll() as $row) {
 
 if (isset($_SESSION['customer'])) {
   include('menu2.php');
-  echo '<p class="notice">歡迎回來，' . $_SESSION['customer']['name'] . '。</p>';
+  echo '<p>歡迎回來，' . $_SESSION['customer']['name'] . '。</p>';
 }else {
   $sql_master = $pdo->prepare('SELECT * FROM Master WHERE login=? AND password=?');
   $sql_master->execute([$login, $password]);
@@ -41,10 +41,10 @@ if (isset($_SESSION['customer'])) {
   }
   if (isset($_SESSION['customer'])) {
     include('menu3.php');
-    echo '<p class="notice">歡迎回來，' . $_SESSION['customer']['name'] . '。</p>';
+    echo '<p>歡迎回來，' . $_SESSION['customer']['name'] . '。</p>';
   }else {
     include('menu1.php');
-    echo '<p class="notice">帳號密碼輸入錯誤，請重新確認</p>';
+    echo '<p>帳號密碼輸入錯誤，請重新確認</p>';
   }
 }
 ?>
