@@ -35,6 +35,21 @@ function linkMysql() {
   return new PDO($a, DB_USER, DB_PSWD);
 }
 
+function noticeTable($message) {
+  echo '<div class="noticeMessage">';
+  echo '<div class="noticeHeader">訊息</div>';
+  echo '<spanl class="noticeWord">' . $message . '</spanl>';
+  echo '</div>';
+}
+
+function noticeTableMaster($message) {
+  echo '<div class="noticeMessage">';
+  echo '<div class="noticeHeaderMaster">訊息</div>';
+  echo '<spanl class="noticeWord">' . $message . '</spanl>';
+  echo '</div>';
+}
+  
+
 
 
 

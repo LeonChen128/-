@@ -5,26 +5,26 @@
     <link rel="stylesheet" type="text/css" href="lib/all.css">
   </head>
   <body class="background">
-    <?php
-    include('menu2.php');
-    ?>
+    <?php include 'menu2.php';?>
     <form action="product1.php" method="post">
+      <div class="searchTable">
       <p>查詢商品：</p>
       <?php
       if (isset($_POST['keyword'])) {
-        echo '<p>請輸入商品關鍵字:<input type="text" name="keyword" value="' . htmlspecialchars(trim($_POST['keyword'])) . '" style="font-size:18px;margin-left:5px;">';
-        echo '<button style="font-size:16px;border-radius:2px;background:rgb(82,161,180);color:white;">查詢</button></p>';
+        echo '<spanl class="searchWord">請輸入商品關鍵字:</spanl>';
+        echo '<input type="text" name="keyword" value="' . trim($_POST['keyword']) . '" class="searchInput">';
+        echo '<button class="searchButton">查詢</button></p>';
       }else {
-        echo '<p>請輸入商品關鍵字:<input type="text" name="keyword" style="font-size:18px;margin-left:5px;">';
-        echo '<button style="font-size:16px;border-radius:2px;background:rgb(82,161,180);color:white;">查詢</button></p>';
+        echo '<spanl class="searchWord">請輸入商品關鍵字:</spanl>';
+        echo '<input type="text" name="keyword" class="searchInput">';
+        echo '<button class="searchButton">查詢</button>';
       }     
       ?>
-      <hr>
-    </form> 
+      </div>
+    </form>
     <div class="product-card">
       <h1 style="text-align:center;">商品資料</h1>
       <table style="text-align:center;margin-left:50px;">
-        <!--<tr class="word18px"><th>商品編號</th><th>商品名稱</th><th>商品價格</th></tr>-->
         <?php
         include('lib/funcs.php');
         include('define.php');
@@ -52,6 +52,6 @@
         }
         ?> 
       </table>
-    </div>  
+    </div> 
   </body>  
 </html>

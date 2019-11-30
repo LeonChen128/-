@@ -11,12 +11,12 @@ session_start();
 
 $pdo = linkMysql();
 $sql = $pdo->prepare('SELECT * FROM Favorite WHERE customer_id=? AND product_id=?');
-$sql->execute([$_SESSION['customer']['id'], $_REQUEST['id']]);
+$sql->execute([$_SESSION['customer']['id'], $_GET['id']]);
 foreach ($sql->fetchAll() as $row) {
 }
 if (empty($row)) {
   $sql = $pdo->prepare('INSERT INTO Favorite VALUES(null,?,?)');
-  $sql->execute([$_SESSION['customer']['id'], $_REQUEST['id']]);
+  $sql->execute([$_SESSION['customer']['id'], $_GET['id']]);
 
   echo '<p style="margin-left:10px;">商品成功加入我的最愛</p>';
   echo '<hr>';

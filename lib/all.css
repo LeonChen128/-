@@ -19,7 +19,7 @@
   background:rgb(238,238,238);
 }
 
-.word {
+.word, .wordMaster {
   font-size:14px;
   height: 25px;
   line-height: 25px;
@@ -34,6 +34,10 @@
 
 .word:hover {
   background: rgba(39, 140, 138, 1);
+}
+
+.wordMaster:hover {
+  background: rgba(90, 9, 47, 1);
 }
 
 .card {
@@ -68,6 +72,39 @@
   background: rgba(14,74,125,1);
 }
 
+.noticeMessage {
+  border-radius: 5px;
+  width: 360px;
+  height: 200px;
+  background: white;
+  margin: 150px auto;
+  text-align: center;
+}
+
+.noticeHeader {
+  width: 360px;
+  height: 50px;
+  background: rgba(91, 204, 193, 1);
+  border-radius: 5px 5px 0px 0px;
+  font-size: 25px;
+  line-height: 50px;
+}
+
+.noticeHeaderMaster {
+  width: 360px;
+  height: 50px;
+  background: rgba(232, 103, 147, 1);
+  border-radius: 5px 5px 0px 0px;
+  font-size: 25px;
+  line-height: 50px;
+}
+
+.noticeWord {
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 50px;
+}
+
 .goRegister {
   display: inline-block;
   text-decoration: none;
@@ -85,12 +122,53 @@
   font-size:18px;
   margin: 10px auto;
 }
+
+.searchTable {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.searchWord {
+  display: inline-block;
+  float: left;
+  margin-top: 2px;
+}
+
+.searchInput {
+  display: inline-block;
+  float: left;
+  width: 220px;
+  height: 30px;
+  border: 1px solid rgba(220, 220, 220, 1);
+  border-radius: 3px;
+  font-size:16px;
+  margin-left:5px;
+}
+
+.searchButton {
+  display: inline-block;
+  float: left;
+  width: 60px;
+  height: 30px;
+  font-size:14px;
+  border-radius:3px;
+  background:rgb(82,161,180);
+  color:white;
+  margin-left: 5px;
+}
+
+.searchButton:hover {
+  background: rgba(61, 130, 146, 1)
+}
+
 .product {
   text-decoration:none;
 }
+
 .product-card {
   display: inline-block;
   padding:15px;
+  margin-top: 30px;
   margin-left: 230px;
   width:945px;
   background-color:rgb(255,255,255);
@@ -111,7 +189,7 @@
 }
 
 .productFrame:hover {
-  background: lightblue
+  background: rgba(226, 153, 147, 1)
 }
 
 .pictureFrame {
@@ -150,9 +228,9 @@
 .detail-card {
   width:380px;
   padding:25px;
-  margin:25px;
   background:rgb(255,255,255);
   border-radius:3px;
+  margin: 25 auto;
 }
 .picture-size {
   height:240px;

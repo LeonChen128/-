@@ -1,11 +1,7 @@
-<link rel="stylesheet" type="text/css" href="lib/all.css">
-<body class="background"></body>
-
 <?php
 
-include('lib/funcs.php');
-include('define.php');
-include('menu2.php');
+include 'lib/funcs.php';
+include 'define.php';
 
 session_start();
 
@@ -26,9 +22,14 @@ $_SESSION['product'][$id] = [
 'count' => $count + $_POST['count']
 ];
 
-echo '<p style="margin-left:10px;">商品放入購物車成功</p>';
-echo '<hr>';
+?>
 
-include('car.php');
+
+<?php include 'lib/header.php'?>
+<?php include 'menu2.php'?>
+<p style="margin-left:10px;">商品放入購物車成功</p>
+<hr>
+<?php include('car.php');?>
+<?php include 'lib/footer.php';?>
 
 
